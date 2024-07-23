@@ -27,9 +27,32 @@ public class countingSort {
             }
         }
     }
+
+
+    public static void counting_sort_descending(int arr[]){
+        //find largest 
+        int largest = Integer.MIN_VALUE;
+        for(int i=0; i<arr.length; i++){
+            largest = Math.max(largest, arr[i]);
+        }
+        //create and initialize count array
+        int count[] = new int[largest+1];
+        for(int i=0; i<arr.length; i++){
+            count[arr[i]]++;
+        }
+        //sort
+        int j=0;
+        for(int i=count.length-1; i>=0; i--){
+            while(count[i] > 0){
+                arr[j] = i;
+                j++;
+                count[i]--;
+            }
+        }
+    }
     public static void main(String[] args) {
         int arr[] = {1,2,3,4,1,2,1,6,9,10};
-        counting_sort(arr);
+        counting_sort_descending(arr);
         for(int a : arr){
             System.out.print(a+" ");
         }
