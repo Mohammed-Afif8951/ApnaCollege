@@ -1,4 +1,3 @@
-/*  Question1:Count how many times lowercase vowels occurred in a String entered by the user */
 package String.assignment;
 
 
@@ -7,7 +6,7 @@ import java.util.Scanner;
 
 public class Find_No_Of_Lowercase_Letter {
 
-    //Question 1
+    /*  Question1:Count how many times lowercase vowels occurred in a String entered by the user */
     public static void find_No_Of_Lowercase_Letter(String str){
         int count = 0;
         for(int i=0; i<str.length(); i++){
