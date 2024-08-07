@@ -4,6 +4,9 @@
 
     2)given String = "bbbaaccc"
     output = "b3a2c3"
+
+    3) given String = "aaa  bbccc"
+    output = "a3 2b2c3"
  */
 package String;
 public class StringCompression {
