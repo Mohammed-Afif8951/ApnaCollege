@@ -20,7 +20,7 @@ public class Merge_Sort {
     }
 
     public static void merge(int arr[], int si, int mid, int ei){
-        int temp[] = new int[ei-si+1];
+        int temp[] = new int[ei - si + 1];
         int i=si; // index for 1 sorted part 
         int j=mid+1; // index for 2 sorted part
         int k = 0; // index for temp array

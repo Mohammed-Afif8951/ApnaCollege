@@ -1,7 +1,7 @@
 package Divide_And_Conquer;
 
 public class QuickSort {
-
+    
     public static void quickSort(int arr[],int si, int ei){
         if(si >= ei){
             return;
@@ -11,6 +11,7 @@ public class QuickSort {
         int pIndx = partition(arr,si,ei);
         quickSort(arr, si, pIndx-1); //Left
         quickSort(arr, pIndx+1, ei); //Right
+    
     }
 
     public static int partition(int arr[], int si, int ei){
@@ -40,5 +41,6 @@ public class QuickSort {
         for(int i=0; i<arr.length; i++){
             System.out.print(arr[i]+" ");
         }
+       
     }
 }

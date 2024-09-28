@@ -64,7 +64,7 @@ public class Find_Substring_WithSameStartAndEnd {
     public static void main(String[] args) {
         String str = "abcab";
         int n = str.length();
-       // find_Contiguous_Substrings(str, 0, 0);
-    System.out.println(find_No_Of_Contiguous_Substring(str, 0, n-1, n));
+       find_Contiguous_Substrings(str, 0, 0);
+        //System.out.println(find_No_Of_Contiguous_Substring(str, 0, n-1, n));
     }
 }
