@@ -354,6 +354,44 @@ public class LinkedList {
         return merge(newleft, newright);
     }
 
+    public static void zigzagLL(Node head) {
+        // step 1: find mid (last node of left half)
+        Node slow = head;
+        Node fast = head.next;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        Node mid = slow;
+
+        // step 2: reverse right half
+        Node cur = mid.next;
+        mid.next = null;
+        Node prev = null;
+        Node next;
+        while (cur != null) {
+            next = cur.next;
+            cur.next = prev;
+            prev = cur;
+            cur = next;
+        }
+
+        // step 3: make zigzag(alternate node)
+        Node rightHead = prev; 
+        Node leftHead = head;
+        Node nextL, nextR;
+        while (leftHead != null && rightHead != null) {
+            nextL = leftHead.next;
+            leftHead.next = rightHead;
+            nextR = rightHead.next;
+            rightHead.next = nextL;
+
+            // update leftHead && rightHead
+            leftHead = nextL;
+            rightHead = nextR;
+        }
+    }
+
     public static void main(String[] args) {
         // LinkedList ll = new LinkedList();
         // ll.addFirst(2);
@@ -403,15 +441,28 @@ public class LinkedList {
         // ll.printLL();
 
         // Merge Sort
+        // LinkedList ll = new LinkedList();
+        // ll.addFirst(1);
+        // ll.addFirst(2);
+        // ll.addFirst(3);
+        // ll.addFirst(4);
+        // ll.addFirst(5);
+        // ll.addFirst(6);
+        // ll.printLL();
+        // ll.head = ll.merge_Sort(head);
+        // ll.printLL();
+
+        // zigzig LL
         LinkedList ll = new LinkedList();
-        ll.addFirst(1);
-        ll.addFirst(2);
-        ll.addFirst(3);
-        ll.addFirst(4);
-        ll.addFirst(5);
-        ll.addFirst(6);
+        ll.addLast(1);
+        ll.addLast(2);
+        ll.addLast(3);
+        ll.addLast(4);
+        ll.addLast(5);
+
         ll.printLL();
-        ll.head = ll.merge_Sort(head);
+        ll.zigzagLL(head);
+        ;
         ll.printLL();
 
     }
